@@ -11,16 +11,17 @@ const dummyContacts = [
 export default function ContactList({ setSelectedContactId }) { 
 
   const [contacts, setContacts] = useState(dummyContacts);
-  console.log("Contacts: ", contacts);
+  //console.log("Contacts: ", contacts);
 
 
   useEffect(() => {
     async function fetchContacts() {
       try {
         const response = await fetch(
-          "https://jsonplace-univclone.herokuapp.com/users"
+          "https://jsonplaceholder.typicode.com/users/"
         );
         const result = await response.json();
+
         setContacts(result);
       } catch (error) {
         console.error(error);
@@ -45,7 +46,7 @@ export default function ContactList({ setSelectedContactId }) {
               <td>Phone</td>
             </tr>
             {contacts.map((contact) => {
-          return <ContactRow key={contact.id} contact={contact} />;
+          return <ContactRow key={contact.id} contact={contact} setSelectedContactId={setSelectedContactId} />;
           })}
           </tbody>
         </table>
