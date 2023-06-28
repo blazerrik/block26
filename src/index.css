@@ -67,3 +67,17 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+table, th, td {
+  border: 1px solid gray;
+}
+
+.goBack{
+  color:   #747bff;
+  background: blue;
+  ;
+}
+
+.title{
+  color: cornflowerblue;
+}
